@@ -5,13 +5,13 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            bat(script: 'echo Building', returnStatus: true, returnStdout: true)
+            bat 'echo Building'
             mail(subject: 'Whoa een mail', body: 'Ik mail gewoon vanuit Jenkins', from: 'Jenkins@nico.ikdachtietsmet.nl', to: 'nico.nijenhuis@gmail.com')
           }
         }
         stage('Hang in') {
           steps {
-            bat(script: 'echo just hangin round', returnStdout: true)
+            bat 'echo just hangin round'
             echo 'Dit gaat lekker'
           }
         }
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Wrap it up') {
       steps {
-        bat(script: 'echo That is all', returnStdout: true)
+        bat 'echo That is all'
       }
     }
   }
