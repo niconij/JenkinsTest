@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            bat(script: '\'echo Building\'', returnStatus: true, returnStdout: true)
+            bat(script: 'echo Building', returnStatus: true, returnStdout: true)
           }
         }
         stage('Hang in') {
@@ -15,7 +15,7 @@ pipeline {
         }
       }
     }
-    stage('error') {
+    stage('Warp it up') {
       steps {
         bat(script: 'echo That is all', returnStdout: true)
       }
