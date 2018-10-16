@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Build a load') {
       parallel {
         stage('Build') {
           steps {
@@ -11,11 +11,12 @@ pipeline {
         stage('Hang in') {
           steps {
             bat(script: 'echo just hangin round', returnStdout: true)
+            echo 'Dit gaat lekker'
           }
         }
       }
     }
-    stage('Warp it up') {
+    stage('Wrap it up') {
       steps {
         bat(script: 'echo That is all', returnStdout: true)
       }
